@@ -9,6 +9,7 @@ import Layout from './Components/Layout/Layout'
 import ContactUs from './Components/ContactUs/ContactUs'
 import ServicesSection from './Components/ServicesSection/ServicesSection'
 import { LanguageProvider } from './Context/LanguageContext'
+import Portfolio from './Components/Portfolio/Portfolio'
 
 
 
@@ -22,6 +23,7 @@ let x = createBrowserRouter([
   {path : "about" , element : <WhoAreWe />},
   {path : "conectus" , element : <ContactUs />},
   {path : "services" , element : <ServicesSection />},
+  {path : "portfolio" , element : <Portfolio />},
 
 
   ]    },

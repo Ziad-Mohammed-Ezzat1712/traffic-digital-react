@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from 'react'
 import style from "../Home/Home.module.css" 
-import photoImg from "../../../Images/Screenshot 2025-06-11 135420.png";
+import photoImg from "../../../Images/par.png";
 import marketingImg from "../../../Images/Dd.png";
 import whatsappImg from "../../../Images/coulms.png"
 import slide1 from "../../../Images/1.png";
@@ -143,8 +143,8 @@ export default function Home() {
             {texts.heroParagraph}
           </p>
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-            <Link dir={isArabic ? undefined : "ltr"} to="#" className="underline text-black font-bold">{texts.readMore}</Link>
-            <Link dir={isArabic ? undefined : "ltr"} to="#" className="bg-[#666666] text-white px-6 py-2 rounded-full hover:bg-black flex items-center gap-2">
+            <Link dir={isArabic ? undefined : "ltr"} to="/about" className="underline my-3 text-black font-bold">{texts.readMore}</Link>
+            <Link dir={isArabic ? undefined : "ltr"} to="/conectus" className="bg-[#666666] text-white px-6 py-2 rounded-full hover:bg-black flex items-center gap-2">
               {texts.scheduleCall}
               <i className="fa-solid fa-arrow-left"></i>
             </Link>
@@ -153,19 +153,37 @@ export default function Home() {
 
         <div className="lg:w-1/2 flex flex-col gap-6 max-w-md mx-auto lg:mx-0">
 
-          <div className="flex flex-col md:flex-row gap-6 justify-between">
+         <div className="flex flex-col md:flex-row gap-6 justify-between">
+  {/* العنصر الأول */}
+  <div className="bg-gray-100 p-6 text-center rounded-lg shadow-md flex-1 flex flex-col items-center justify-center h-[300px] md:h-auto">
+    <h2 dir={isArabic ? undefined : "ltr"} className="text-5xl font-bold text-[#080808]">+230</h2>
+    <p dir={isArabic ? undefined : "ltr"} className="text-gray-600 mt-4">{texts.companiesCountText}</p>
+    <img className="mt-6 max-w-full h-auto" src={photoImg} alt="photo" />
+  </div>
 
-            <div className="bg-gray-100 p-6 text-center rounded-lg shadow-md flex-1 flex flex-col items-center justify-center">
-              <h2 dir={isArabic ? undefined : "ltr"} className="text-5xl font-bold text-[#080808]">+230</h2>
-              <p dir={isArabic ? undefined : "ltr"} className="text-gray-600  mt-4">{texts.companiesCountText}</p>
-              <img className="mt-6 max-w-full h-auto" src={photoImg} alt="photo" />
-            </div>
+  {/* العنصر الثاني */}
+<div className="w-full max-w-[400px] h-[300px] md:h-auto shadow-lg rounded-xl overflow-hidden flex-1">
+  <svg
+    viewBox="0 0 200 300"
+    className="w-full h-full"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <clipPath id="curvedClip" clipPathUnits="userSpaceOnUse">
+        <path d="M0,300 Q10,0 300,0 L300,300 Z" />
+      </clipPath>
+    </defs>
+    <image
+      href={marketingImg}
+      width="300"
+      height="300"
+      clipPath="url(#curvedClip)"
+      preserveAspectRatio="xMidYMid slice"
+    />
+  </svg>
+</div>
 
-            <div className={`${style.curveded}  rounded-xl shadow-lg flex-1 overflow-hidden`}>
-              <img src={marketingImg} alt="صورة تسويق" className={`${style.curved} w-full h-lg-full object-contain`}  />
-            </div>
-
-          </div>
+</div>
 
           <div className="bg-[#1C1C1C] text-white rounded-xl p-6 text-center flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
@@ -285,13 +303,13 @@ export default function Home() {
             <div className="flex flex-wrap justify-start gap-4 mt-6">
               <Link dir={isArabic ? undefined : "ltr"}
                 to="#"
-                className="border border-blue-600 text-blue-600 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition"
+                className="border border-balck text-black font-semibold px-6 py-2 rounded-full hover:bg-black hover:text-white transition"
               >
                 {texts.moreQuestions}
               </Link>
               <Link dir={isArabic ? undefined : "ltr"}
-                to="#"
-                className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-blue-700 transition"
+                to="/conectus"
+                className="bg-black text-white font-semibold px-6 py-2 rounded-full hover:bg-neutral-800 transition"
               >
                 {texts.contactUs}
               </Link>
@@ -331,13 +349,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className= {`${style.sec3} my-7 py-16 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between rounded-xl text-center lg:text-left`}>
-        <h2 dir={isArabic ? undefined : "ltr"} className="text-3xl md:text-4xl font-bold leading-relaxed lg:flex-none lg:text-left lg:w-auto">
+      <section className= {`bg-gradient-to-br from-neutral-950 to-neutral-700 my-7 py-16 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between rounded-xl text-center lg:text-left`}>
+        <h2 dir={isArabic ? undefined : "ltr"} className="text-white text-3xl md:text-4xl font-bold leading-relaxed lg:flex-none lg:text-left lg:w-auto">
           {texts.readyToWork}
         </h2>
 
         <button
-          className="font-bold bg-white text-black border border-white rounded-full px-8 py-2 hover:bg-blue-600 hover:text-black transition mt-6 lg:mt-0"
+          className="font-bold bg-white text-black border border-white rounded-full px-8 py-2 hover:bg-black hover:text-white transition mt-6 lg:mt-0"
           type="button"
         >
           {texts.startNowBtn}
